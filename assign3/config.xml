@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean name="author"
+		class="com.epsilon.Project.Author">
+
+		<property name="Authorid">
+			<value>2000</value>
+		</property>
+		<property name="AuthorName">
+		  <value>J.K.Rowling</value>
+		</property>
+		
+	
+		 
+	</bean>
+	   <bean name="customer"
+		class="com.epsilon.Project.Customer">
+
+		<property name="Customerid">
+			<value>1</value>
+		</property>
+		<property name="Customername">
+		  <value>likitha</value>
+		</property>
+		
+	
+		 
+	</bean>
+	
+	   <bean name="publisher"
+		class="com.epsilon.Project.Publisher">
+
+		<property name="Publisherid">
+			<value>10</value>
+		</property>
+		<property name="Publishername">
+		  <value>Bloomsbury</value>
+		</property>
+		
+	<property name="Publisherlocation">
+		  <value>UK</value>
+		</property>
+			 
+	</bean>
+	
+	 <bean name="book1"
+		class="com.epsilon.Project.Book">
+
+		<property name="Bookid">
+			<value>1</value>
+		</property>
+		<property name="Bookname">
+		  <value>Harry Potter and the philosopher's stone </value>
+		</property>
+		
+	<property name="publisher">
+		<ref bean="publisher"/>
+		
+		</property>
+	
+		 <property name="author">
+		<ref bean="author"/>
+		
+		</property>
+	
+	</bean>
+	 <bean name="book2"
+		class="com.epsilon.Project.Book">
+
+		<property name="Bookid">
+			<value>2</value>
+		</property>
+		<property name="Bookname">
+		  <value>Harry Potter Chamber of secrets </value>
+		</property>
+		
+	<property name="publisher">
+		<ref bean="publisher"/>
+		
+		</property>
+	
+		 <property name="author">
+		<ref bean="author"/>
+		
+		</property>
+	
+	</bean>
+	
+	<bean name="book3"
+		class="com.epsilon.Project.Book">
+
+		<property name="Bookid">
+			<value>3</value>
+		</property>
+		<property name="Bookname">
+		  <value>Harry Potter Goblet of fire </value>
+		</property>
+		
+	<property name="publisher">
+		<ref bean="publisher"/>
+		
+		</property>
+	
+		 <property name="author">
+		<ref bean="author"/>
+		
+		</property>
+	
+	</bean>
+	
+	
+	
+
+	<bean name="order"
+		class="com.epsilon.Project.Order">
+
+		<property name="Orderid">
+			<value>1</value>
+		</property>
+		
+		<property name="customer">
+		<ref bean="customer"/>
+		
+		</property>
+		
+		<property name="orderitems">
+		<list>
+			<ref bean="book1"/>
+			<ref bean="book2"/>
+		   <ref bean="book3"/>
+		</list>
+		</property>
+
+		 
+	</bean>
+	
+	
+
+</beans>
